@@ -1743,7 +1743,7 @@ if (num_dup_records < 0):
   print 'Error: Number of duplicate records must be zero or positive'
   sys.exit()
 
-if (max_num_dups <= 0) or (max_num_dups > 9):
+if (max_num_dups <= 0) or (max_num_dups > 10000):
   print 'Error: Maximal number of duplicates per record must be positive ' + \
         'and less than 10'
   sys.exit()
@@ -1964,7 +1964,7 @@ elif (prob_distribution == 'poi'):  # Poisson distribution of duplicates - - -
     prob_dist_list.append((num_dup, poisson_num[i]+prob_dist_list[-1][1]))
 
 elif (prob_distribution == 'zip'):  # Zipf distribution of duplicates - - - - -
-  zipf_theta = 0.5
+  zipf_theta = 0.01
 
   denom = 0.0
   for i in range(num_org_records):
